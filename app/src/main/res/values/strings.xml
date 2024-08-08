@@ -1,3 +1,9 @@
 <resources>
     <string name="app_name">AXForAssets</string>
+    <string-array name="payment_methods">
+        <item>Select payment method</item>
+        <item>Visa</item>
+        <item>Master Card</item>
+        <item>Credit Card</item>
+    </string-array>
 </resources>
