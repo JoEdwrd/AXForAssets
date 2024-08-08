@@ -8,4 +8,9 @@
     <color name="black">#FF000000</color>
     <color name="buttonColor">#4F89DF</color>
     <color name="white">#FFFFFFFF</color>
+    <color name="defaultColor">#091A28</color>
+    <color name="inputFieldColor">#333333</color>
+    <color name="textLabelColor">#AAAAAA</color>
+    <color name="btnLoginColor">#4178E2</color>
+    <color name="errorTextColor">#FF0000</color>
 </resources>

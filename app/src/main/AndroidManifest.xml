@@ -11,8 +11,22 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.AXForAssets"
         tools:targetApi="31">
-
         <activity
+            android:name=".SplashActivity"
+            android:exported="false" />
+        <activity
+            android:name=".HomeActivity"
+            android:exported="false" />
+        <activity
+            android:name=".ItemsPageActivity"
+            android:exported="false"
+            android:theme="@style/Theme.Design.Light.NoActionBar" />
+        <activity
+            android:name=".LoginPageActivity"
+            android:exported="false"
+            android:theme="@style/Theme.Design.Light.NoActionBar" />
+        <activity
+            android:name=".MainActivity"
             android:name=".ItemDetail"
             android:exported="true">
             <intent-filter>
