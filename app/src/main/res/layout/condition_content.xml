@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="16dp">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="
+                Service: refers to the websites, applications, products, or services offered by [Your Company Name].
+                User: refers to the individual or entity that accesses or uses the Service.
+                Content: refers to any text, data, information, graphics, images, or other materials uploaded, posted, or displayed on the Service.Service: refers to the websites, applications, products, or services offered by [Your Company Name].
+                User: refers to the individual or entity that accesses or uses the Service.
+                Content: refers to any text, data, information, graphics, images, or other materials uploaded.
+
+                Service: refers to the websites, applications, products, or services offered by [Your Company Name].
+                User: refers to the individual or entity that accesses or uses the Service.
+                Content: refers to any text, data, information, graphics, images, or other materials uploaded, posted, or displayed on the Service.Service: refers to the websites, applications, products, or services offered by [Your Company Name].
+                User: refers to the individual or entity that accesses or uses the Service.
+                Content: refers to any text, data, information, graphics, images, or other materials uploaded."
+            android:textColor="@android:color/white"
+            android:textSize="14sp" />
+
+    </LinearLayout>
+</ScrollView>

@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:padding="16dp"
+    android:background="@color/defaultColor"
+    tools:context=".HomeActivity">
+
+    <TextView
+        android:id="@+id/textWelcome"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Welcome, Joseph"
+        android:textSize="12pt"
+        android:textColor="@android:color/white"
+        android:layout_marginBottom="16dp"
+        android:textStyle="bold"
+        android:fontFamily="sans-serif" />
+
+    <androidx.viewpager2.widget.ViewPager2
+        android:id="@+id/viewPager"
+        android:layout_width="800px"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="16dp"
+        android:layout_gravity="center_horizontal"/>
+
+    <TextView
+        android:id="@+id/textWelcome2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Weekend Deals"
+        android:textSize="14pt"
+        android:textColor="@android:color/white"
+        android:textStyle="bold"
+        android:layout_marginBottom="16dp"/>
+
+    <LinearLayout
+        android:layout_width="700px"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:background="@color/defaultColor"
+        android:layout_gravity="center_horizontal">
+        <TextView
+            android:id="@+id/tabTerms"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="TERMS"
+            android:textColor="@android:color/white"
+            android:textSize="16sp"
+            android:gravity="center"
+            android:padding="16dp"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/tabCondition"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="CONDITION"
+            android:textColor="@android:color/white"
+            android:textSize="16sp"
+            android:gravity="center"
+            android:padding="16dp"
+            android:textStyle="bold" />
+    </LinearLayout>
+
+    <FrameLayout
+        android:id="@+id/tabContent"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:background="@color/defaultColor"/>
+
+</LinearLayout>
