@@ -1,26 +1,80 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="wrap_content"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:background="#091A28"
     android:id="@+id/rootLayout"
     tools:context=".ItemDetail">
 
+
+
+    <!-- Scrollable content below the navbar -->
     <ScrollView
+        android:id="@+id/scrollView"
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
+        android:layout_height="match_parent"
+        app:layout_constraintTop_toTopOf="parent"
+        android:layout_marginTop="10dp">
 
         <RelativeLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content">
+
+            <!-- Navbar at the top -->
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/appBar"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                android:elevation="8dp"> <!-- Add elevation to ensure it is on top -->
+
+                <ImageView
+                    android:id="@+id/logoItems"
+                    android:padding="7dp"
+                    android:layout_width="85dp"
+                    android:layout_height="65dp"
+                    android:outlineSpotShadowColor="@color/black"
+                    android:src="@drawable/logoaxforasset"
+                    app:layout_constraintLeft_toLeftOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    android:contentDescription="Logo AXForAsset" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="65dp"
+                    android:gravity="center_vertical"
+                    android:text="Items"
+                    android:textSize="30sp"
+                    android:textStyle="bold"
+                    android:textColor="@color/white"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintLeft_toLeftOf="parent"
+                    app:layout_constraintRight_toRightOf="parent" />
+
+                <ImageView
+                    android:id="@+id/hamburgerMenu"
+                    android:layout_width="65dp"
+                    android:layout_height="65dp"
+                    android:outlineSpotShadowColor="@color/black"
+                    android:src="@drawable/baseline_menu_24"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    android:contentDescription="Hamburger Menu Icon" />
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+            <!-- Your existing layout content -->
 
             <ImageView
                 android:id="@+id/imageHeader"
                 android:layout_width="match_parent"
                 android:layout_height="200dp"
                 android:scaleType="centerCrop"
-                android:src="@drawable/header_image" />
+                android:src="@drawable/header_image"
+                android:layout_marginTop="0dp"
+                android:layout_alignParentTop="true"/>
 
             <ImageView
                 android:id="@+id/arrow"
@@ -30,7 +84,6 @@
                 android:layout_marginTop="100dp"
                 android:layout_marginLeft="30dp"
                 />
-
 
             <pl.droidsonroids.gif.GifImageView
                 android:id="@+id/imageitem1"
@@ -121,8 +174,7 @@
                 android:layout_marginTop="16dp"
                 android:layout_centerInParent="true"
                 android:scaleType="centerCrop"
-                android:src="@drawable/allay_desc" />
-
+                android:src="@drawable/allayheader" />
 
             <ImageView
                 android:id="@+id/itemDescription1"
@@ -232,6 +284,85 @@
                 android:layout_below="@id/buyButton"
                 />
 
+            <FrameLayout
+                android:id="@+id/backgroundFrame"
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                android:background="@android:color/transparent"
+                android:visibility="gone" />
+
+            <!-- NAVBAR MENU -->
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/nav"
+                android:layout_width="200dp"
+                android:layout_height="220dp"
+                android:layout_below="@+id/appBar"
+                android:layout_alignParentEnd="true"
+                android:background="@drawable/menu"
+                android:visibility="gone">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    android:padding="3dp">
+
+                    <TextView
+                        android:id="@+id/homeNav"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="Home"
+                        android:textStyle="bold"
+                        android:textSize="20sp"
+                        android:gravity="center_horizontal"
+                        android:textColor="@color/textLabelColor"
+                        android:layout_marginTop="10dp"
+                        android:clickable="true" />
+
+                    <FrameLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="1dp"
+                        android:background="@color/white"
+                        android:layout_marginTop="25dp" />
+
+                    <TextView
+                        android:id="@+id/profileNav"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="Profile"
+                        android:textStyle="bold"
+                        android:textSize="20sp"
+                        android:gravity="center_horizontal"
+                        android:layout_marginTop="25dp"
+                        android:textColor="@color/textLabelColor" />
+
+                    <FrameLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="1dp"
+                        android:background="@color/white"
+                        android:layout_marginTop="25dp" />
+
+                    <TextView
+                        android:id="@+id/logoutNav"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="Logout"
+                        android:textStyle="bold"
+                        android:textSize="20sp"
+                        android:gravity="center_horizontal"
+                        android:layout_marginTop="25dp"
+                        android:textColor="@color/textLabelColor" />
+                </LinearLayout>
+            </androidx.constraintlayout.widget.ConstraintLayout>
+            <!-- NAVBAR MENU -->
+
         </RelativeLayout>
     </ScrollView>
-</RelativeLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

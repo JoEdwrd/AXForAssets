@@ -7,11 +7,13 @@ import android.view.View;
 import android.widget.AdapterView;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.FrameLayout;
 import android.widget.ImageView;
 import android.widget.Spinner;
 import android.widget.TextView;
 import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.constraintlayout.widget.ConstraintLayout;
 
 public class ItemDetail extends AppCompatActivity {
 
@@ -20,10 +22,58 @@ public class ItemDetail extends AppCompatActivity {
     private Button buyButton;
     private CustomSpinnerAdapter adapter;
 
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_item_detail);
+
+        // Get the passed data
+        Intent intent = getIntent();
+        String title = intent.getStringExtra("title");
+        String category = intent.getStringExtra("category");
+        String desc = intent.getStringExtra("desc");
+        String longDesc = intent.getStringExtra("longDesc");
+        String price = intent.getStringExtra("price");
+        String releaseDate = intent.getStringExtra("releaseDate");
+        String imageGifName = intent.getStringExtra("imageGifName");
+        String imagePngName = intent.getStringExtra("imagePngName");
+
+        // Set the item details
+        TextView titleTextView = findViewById(R.id.itemTitle);
+        titleTextView.setText(title);
+
+        TextView categoryTextView = findViewById(R.id.itemDetails4);
+        categoryTextView.setText(category);
+
+        TextView descTextView = findViewById(R.id.itemDescription2);
+        descTextView.setText(longDesc);
+
+        TextView priceTextView = findViewById(R.id.itemPrice);
+        priceTextView.setText(price);
+
+        TextView releaseDateTextView = findViewById(R.id.itemDetails2);
+        releaseDateTextView.setText(releaseDate);
+
+        // Set the images
+        int imageGifResId = getResources().getIdentifier(imageGifName, "drawable", getPackageName());
+        ImageView imageitem1 = findViewById(R.id.imageitem1);
+        imageitem1.setImageResource(imageGifResId);
+
+        int imagePngResId = getResources().getIdentifier(imagePngName, "drawable", getPackageName());
+        ImageView itemImage = findViewById(R.id.itemImage);
+        itemImage.setImageResource(imagePngResId);
+
+        // Back button functionality
+        ImageView backButton = findViewById(R.id.arrow);
+        backButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                finish(); // Go back to the previous activity
+            }
+        });
+
+
 
         emailInput = findViewById(R.id.emailInput);
         paymentMethodSpinner = findViewById(R.id.paymentMethodSpinner);
@@ -65,7 +115,11 @@ public class ItemDetail extends AppCompatActivity {
                 validateAndShowDialog();
             }
         });
+
+        onClickListenerNav();
     }
+
+
 
     private void validateAndShowDialog() {
         String email = emailInput.getText().toString().trim();
@@ -134,7 +188,7 @@ public class ItemDetail extends AppCompatActivity {
         dialogButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(ItemDetail.this, NextActivity.class); // Replace NextActivity with your next activity
+                Intent intent = new Intent(ItemDetail.this, ItemsPageActivity.class);
                 startActivity(intent);
                 finish();
             }
@@ -142,4 +196,66 @@ public class ItemDetail extends AppCompatActivity {
 
         dialog.show();
     }
+
+    protected void onClickListenerNav() {
+        ImageView hamburgerMenu = findViewById(R.id.hamburgerMenu);
+        ConstraintLayout nav = findViewById(R.id.nav);
+        FrameLayout outsideNav = findViewById(R.id.backgroundFrame);
+
+        TextView homeNav = findViewById(R.id.homeNav);
+        TextView profileNav = findViewById(R.id.profileNav);
+        TextView logoutNav = findViewById(R.id.logoutNav);
+
+        hamburgerMenu.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                if (nav.getVisibility() == View.VISIBLE) {
+                    nav.setVisibility(View.GONE);
+                    outsideNav.setVisibility(View.GONE);
+                } else {
+                    nav.setVisibility(View.VISIBLE);
+                    outsideNav.setVisibility(View.VISIBLE);
+                }
+            }
+        });
+
+        outsideNav.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                nav.setVisibility(View.GONE);
+                outsideNav.setVisibility(View.GONE);
+            }
+        });
+
+        homeNav.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                nav.setVisibility(View.GONE);
+                outsideNav.setVisibility(View.GONE);
+                Intent intent = new Intent(ItemDetail.this, LoginPageActivity.class);
+                startActivity(intent);
+            }
+        });
+
+        profileNav.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                nav.setVisibility(View.GONE);
+                outsideNav.setVisibility(View.GONE);
+                Intent intent = new Intent(ItemDetail.this, LoginPageActivity.class);
+                startActivity(intent);
+            }
+        });
+
+        logoutNav.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                nav.setVisibility(View.GONE);
+                outsideNav.setVisibility(View.GONE);
+                Intent intent = new Intent(ItemDetail.this, LoginPageActivity.class);
+                startActivity(intent);
+            }
+        });
+    }
+
 }
