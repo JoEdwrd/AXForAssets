@@ -37,19 +37,28 @@ public class ItemsPageActivity extends AppCompatActivity {
         itemsAdapter = new ItemsAdapter(itemList, new ItemsAdapter.OnItemClickListener() {
             @Override
             public void onItemClick(Item item) {
-                // Set item details in ItemDetailData
-                ItemDetailData.getInstance().setTitle(item.getTitle());
-                ItemDetailData.getInstance().setCategory(item.getCategory());
-                ItemDetailData.getInstance().setDesc(item.getDesc());
-                ItemDetailData.getInstance().setLongDesc(item.getLongDesc());
-                ItemDetailData.getInstance().setPrice(item.getPrice());
-                ItemDetailData.getInstance().setReleaseDate(item.getReleaseDate());
+                Intent intent = new Intent(ItemsPageActivity.this, ItemDetail.class);
 
-                // Ganti LoginPageActivity nya ke DetailPageActivity
-                Intent intent = new Intent(ItemsPageActivity.this, LoginPageActivity.class);
+                // Pass item details including image names
+                intent.putExtra("title", item.getTitle());
+                intent.putExtra("category", item.getCategory());
+                intent.putExtra("desc", item.getDesc());
+                intent.putExtra("longDesc", item.getLongDesc());
+                intent.putExtra("price", item.getPrice());
+                intent.putExtra("releaseDate", item.getReleaseDate());
+
+                // Pass image resource names based on item title
+                String imageGifName = item.getTitle().toLowerCase();
+                String imagePngName = item.getTitle().toLowerCase() + "header";
+
+                intent.putExtra("imageGifName", imageGifName);
+                intent.putExtra("imagePngName", imagePngName);
+
                 startActivity(intent);
             }
         });
+
+
 
         recyclerView.setAdapter(itemsAdapter);
 
