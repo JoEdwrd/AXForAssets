@@ -1,0 +1,140 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<RelativeLayout
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:background="@color/defaultColor">
+
+    <ImageView android:id="@+id/imgspace"
+        android:layout_width="match_parent"
+        android:layout_height="225dp"
+        android:src="@drawable/authspaceimg"
+        android:scaleType="fitXY"
+        />
+
+    <ImageView android:id="@+id/logo"
+        android:layout_width="120dp"
+        android:layout_height="wrap_content"
+        android:src="@drawable/logoaxforasset"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="90dp"
+        android:outlineSpotShadowColor="@color/black"/>
+
+    <TextView android:id="@+id/loginPageHeading"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textColor="@color/white"
+        android:textStyle="bold"
+        android:layout_below="@id/imgspace"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="50dp"
+        android:textSize="30sp"
+        android:text="Login Page"
+        />
+
+    <TextView
+        android:id="@+id/labelUsername"
+        android:labelFor="@id/usernameInput"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Username"
+        android:textSize="19sp"
+        android:textStyle="bold"
+        android:layout_marginLeft="40dp"
+        android:layout_marginTop="25dp"
+        android:textColor="@color/textLabelColor"
+        android:layout_below="@id/loginPageHeading"
+        />
+    
+    <EditText
+        android:id="@+id/usernameInput"
+        android:layout_width="330dp"
+        android:layout_height="50dp"
+        android:layout_marginTop="60dp"
+        android:hint="Enter you username here..."
+        android:textColorHint="@color/textLabelColor"
+        android:paddingHorizontal="15dp"
+        android:background="@drawable/edittext_background"
+        android:layout_centerHorizontal="true"
+        android:layout_below="@+id/loginPageHeading"
+        android:textColor="@color/textLabelColor"
+        />
+
+    <TextView
+        android:id="@+id/usernameError"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:layout_marginLeft="40dp"
+        android:textSize="20sp"
+        android:textColor="@color/errorTextColor"
+        android:layout_below="@id/usernameInput"
+        android:visibility="invisible"
+        android:text="please input the username!"/>
+
+    <TextView
+        android:id="@+id/labelPassword"
+        android:labelFor="@id/passwordInput"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Password"
+        android:textSize="19sp"
+        android:textStyle="bold"
+        android:layout_marginLeft="40dp"
+        android:layout_marginTop="40dp"
+        android:textColor="@color/textLabelColor"
+        android:layout_below="@id/usernameInput"
+        />
+
+    <EditText
+        android:id="@+id/passwordInput"
+        android:inputType="textPassword"
+        android:layout_width="330dp"
+        android:layout_height="50dp"
+        android:layout_marginTop="75dp"
+        android:hint="Enter you password here..."
+        android:textColorHint="@color/textLabelColor"
+        android:paddingHorizontal="15dp"
+        android:background="@drawable/edittext_background"
+        android:layout_centerHorizontal="true"
+        android:layout_below="@+id/usernameInput"
+        android:textColor="@color/textLabelColor"
+        />
+
+    <TextView
+        android:id="@+id/passwordEmptyError"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:layout_marginLeft="40dp"
+        android:textSize="20sp"
+        android:textColor="@color/errorTextColor"
+        android:layout_below="@id/passwordInput"
+        android:visibility="invisible"
+        android:text="please input the password!"/>
+
+    <TextView
+        android:id="@+id/passwordMinimumLengthError"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:layout_marginLeft="40dp"
+        android:textSize="20sp"
+        android:textColor="@color/errorTextColor"
+        android:layout_below="@id/passwordInput"
+        android:visibility="invisible"
+        android:text="please input password with minimum length of 8!"/>
+    
+    <Button
+        android:id="@+id/loginButton"
+        android:layout_width="330dp"
+        android:layout_height="50dp"
+        android:background="@drawable/loginbutton_background"
+        android:text="Login"
+        android:layout_below="@id/passwordInput"
+        android:textColor="@color/white"
+        android:layout_marginTop="60dp"
+        android:layout_centerHorizontal="true"/>
+
+</RelativeLayout>
