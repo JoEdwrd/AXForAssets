@@ -12,18 +12,7 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="
-                Service: refers to the websites, applications, products, or services offered by [Your Company Name].
-                User: refers to the individual or entity that accesses or uses the Service.
-                Content: refers to any text, data, information, graphics, images, or other materials uploaded, posted, or displayed on the Service.Service: refers to the websites, applications, products, or services offered by [Your Company Name].
-                User: refers to the individual or entity that accesses or uses the Service.
-                Content: refers to any text, data, information, graphics, images, or other materials uploaded.
-
-                Service: refers to the websites, applications, products, or services offered by [Your Company Name].
-                User: refers to the individual or entity that accesses or uses the Service.
-                Content: refers to any text, data, information, graphics, images, or other materials uploaded, posted, or displayed on the Service.Service: refers to the websites, applications, products, or services offered by [Your Company Name].
-                User: refers to the individual or entity that accesses or uses the Service.
-                Content: refers to any text, data, information, graphics, images, or other materials uploaded."
+            android:text="As a user of AXForAsset, you are required to maintain the security of your account, ensuring that your login credentials remain confidential. You must only use the game assets, including Minecraft assets, for personal, non-commercial purposes as permitted by the asset creator. AXForAsset is not liable for any misuse or unauthorized distribution of assets. All transactions are final, and any disputes or issues with assets must be addressed directly with the asset creator. Continued use of AXForAsset indicates your acceptance of these conditions."
             android:textColor="@android:color/white"
             android:textSize="14sp" />
 
