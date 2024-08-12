@@ -207,14 +207,14 @@
                 android:layout_width="350dp"
                 android:layout_height="wrap_content"
                 android:layout_below="@id/itemImage"
-                android:layout_marginTop="45dp"
+                android:layout_centerInParent="true"
                 android:layout_marginLeft="16dp"
-                android:padding="10dp"
-                android:textColor="@color/white"
+                android:layout_marginTop="45dp"
                 android:layout_marginRight="16dp"
                 android:justificationMode="inter_word"
-                android:layout_centerInParent="true"
+                android:padding="10dp"
                 android:text="The Allay is a helpful mob introduced in recent updates, notable for its ability to collect and deliver items to players. By assigning specific items for the Allay to gather, players can streamline resource management and inventory organization during their Minecraft adventures."
+                android:textColor="@color/white"
                 android:textSize="12sp" />
 
             <TextView

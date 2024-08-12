@@ -12,7 +12,7 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="These terms and conditions (Terms) govern your use of our service (Service) provided by [Your Company Name] (we, us, or our). By accessing or using the Service, you agree to be bound by these Terms. If you disagree with any part of the Terms, then you may not access or use the Service."
+            android:text="By using AXForAsset, you agree to create an account and log in before purchasing any game assets, including Minecraft assets. All assets are provided by third-party creators, and AXForAsset is not affiliated with Mojang Studios or Microsoft. Purchased assets are for personal use only, and reselling or commercial use is prohibited. All sales are final, and AXForAsset is not responsible for disputes or content violations. By continuing to use the platform, you accept these terms and conditions."
             android:textColor="@android:color/white"
             android:textSize="14sp" />
 

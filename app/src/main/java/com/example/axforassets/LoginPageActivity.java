@@ -1,5 +1,6 @@
 package com.example.axforassets;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.text.TextUtils;
 import android.view.View;
@@ -68,7 +69,14 @@ public class LoginPageActivity extends AppCompatActivity {
         if (isUsernameValid && isPasswordValid) {
             Toast.makeText(LoginPageActivity.this, "Login Success", Toast.LENGTH_SHORT).show();
             UserData.getInstance().setUsername(usernameVal);
+
+            // Create an Intent to start HomeActivity
+            Intent intent = new Intent(LoginPageActivity.this, HomeActivity.class);
+            intent.putExtra("EXTRA_USERNAME", usernameVal); // Pass the username to HomeActivity
+            startActivity(intent);
+
+            // Optionally finish the current activity to remove it from the back stack
+            finish();
         }
     }
-
 }

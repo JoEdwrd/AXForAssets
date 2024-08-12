@@ -180,7 +180,7 @@ public class ItemsPageActivity extends AppCompatActivity {
         homeNav.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(ItemsPageActivity.this, LoginPageActivity.class);
+                Intent intent = new Intent(ItemsPageActivity.this, HomeActivity.class);
                 startActivity(intent);
             }
         });

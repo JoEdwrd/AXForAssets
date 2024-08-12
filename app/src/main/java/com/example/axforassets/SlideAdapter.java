@@ -4,14 +4,12 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
-
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 import androidx.viewpager2.widget.ViewPager2;
-
 import java.util.List;
 
-public class SlideAdapter extends RecyclerView.Adapter<SlideAdapter.slideViewHolder> {
+public class SlideAdapter extends RecyclerView.Adapter<SlideAdapter.SlideViewHolder> {
     private List<SlideItem> slideItems;
     private ViewPager2 viewPager2;
 
@@ -22,18 +20,14 @@ public class SlideAdapter extends RecyclerView.Adapter<SlideAdapter.slideViewHol
 
     @NonNull
     @Override
-    public slideViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
-        return new slideViewHolder(
-                LayoutInflater.from(parent.getContext()).inflate(
-                        R.layout.slide_item_container,
-                        parent,
-                        false
-                )
-        );
+    public SlideViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
+        View view = LayoutInflater.from(parent.getContext()).inflate(
+                R.layout.slide_item_container, parent, false);
+        return new SlideViewHolder(view);
     }
 
     @Override
-    public void onBindViewHolder(@NonNull slideViewHolder holder, int position) {
+    public void onBindViewHolder(@NonNull SlideViewHolder holder, int position) {
         // Calculate the actual position in the slideItems list
         int actualPosition = position % slideItems.size();
         holder.setImage(slideItems.get(actualPosition));
@@ -45,22 +39,22 @@ public class SlideAdapter extends RecyclerView.Adapter<SlideAdapter.slideViewHol
         return Integer.MAX_VALUE;
     }
 
-    class slideViewHolder extends RecyclerView.ViewHolder {
+    class SlideViewHolder extends RecyclerView.ViewHolder {
         private ImageView imageView;
 
-        slideViewHolder(@NonNull View itemView) {
+        SlideViewHolder(@NonNull View itemView) {
             super(itemView);
             imageView = itemView.findViewById(R.id.imageSlide);
-        }
-
-        void setImage(SlideItem slideItem) {
-            imageView.setImageResource(slideItem.getImage());
 
             // Set the ImageView size to match the parent size (ViewPager2)
             ViewGroup.LayoutParams layoutParams = imageView.getLayoutParams();
             layoutParams.width = ViewGroup.LayoutParams.MATCH_PARENT;
             layoutParams.height = ViewGroup.LayoutParams.WRAP_CONTENT;
             imageView.setLayoutParams(layoutParams);
+        }
+
+        void setImage(SlideItem slideItem) {
+            imageView.setImageResource(slideItem.getImage());
         }
     }
 }
