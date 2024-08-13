@@ -151,7 +151,7 @@ public class ItemDetail extends AppCompatActivity {
         }
 
         if (!email.contains("@gmail.com")) {
-            showCustomDialog("Email must be a valid Gmail address", R.drawable.ic_warning);
+            showCustomDialog("Email must contain '@gmail.com'", R.drawable.ic_warning);
             return;
         }
 
@@ -265,7 +265,7 @@ public class ItemDetail extends AppCompatActivity {
             public void onClick(View view) {
                 nav.setVisibility(View.GONE);
                 outsideNav.setVisibility(View.GONE);
-                Intent intent = new Intent(ItemDetail.this, LoginPageActivity.class);
+                Intent intent = new Intent(ItemDetail.this, Profile.class);
                 startActivity(intent);
             }
         });
