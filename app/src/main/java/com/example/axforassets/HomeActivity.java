@@ -29,6 +29,79 @@ public class HomeActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_home);
 
+        // Set OnClickListener for the first item card
+        FrameLayout itemCard3 = findViewById(R.id.card_item_3);
+        itemCard3.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                // Create an Intent to start ItemDetailActivity
+                Intent intent = new Intent(HomeActivity.this, ItemDetail.class);
+                // Pass the item name to the ItemDetailActivity
+                intent.putExtra("title", "Torch");
+                intent.putExtra("category", "Adventure");
+                intent.putExtra("longDesc", "Torch is a vital light source in Minecraft, crucial for illuminating dark caves, preventing mob spawns, and guiding players through nighttime adventures. Crafted easily from sticks and coal or charcoal, torches are indispensable for exploration and safety.");
+                intent.putExtra("price", "Rp 200,000");
+                intent.putExtra("releaseDate", "31/01/2024");
+                intent.putExtra("imageGifName", "torch");
+                intent.putExtra("imagePngName", "torchheader");
+                startActivity(intent);
+            }
+        });
+
+        FrameLayout itemCard1 = findViewById(R.id.card_item_1);
+        itemCard1.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                // Create an Intent to start ItemDetailActivity
+                Intent intent = new Intent(HomeActivity.this, ItemDetail.class);
+                // Pass the item name to the ItemDetailActivity
+                intent.putExtra("title", "Bow");
+                intent.putExtra("category", "Weapon");
+                intent.putExtra("longDesc", "The bow is a versatile ranged weapon in Minecraft, allowing players to engage enemies from a distance with accuracy and efficiency. Crafted from sticks and string, bows can be enchanted to enhance their abilities, such as increasing damage or granting infinite arrows.");
+                intent.putExtra("price", "Rp 30,000");
+                intent.putExtra("releaseDate", "03/05/2022");
+                intent.putExtra("imageGifName", "bow");
+                intent.putExtra("imagePngName", "bowheader");
+                startActivity(intent);
+            }
+        });
+
+        FrameLayout itemCard2 = findViewById(R.id.card_item_2);
+        itemCard2.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                // Create an Intent to start ItemDetailActivity
+                Intent intent = new Intent(HomeActivity.this, ItemDetail.class);
+                // Pass the item name to the ItemDetailActivity
+                intent.putExtra("title", "Allay");
+                intent.putExtra("category", "Pet");
+                intent.putExtra("longDesc", "The Allay is a helpful mob introduced in recent updates, notable for its ability to collect and deliver items to players. By assigning specific items for the Allay to gather, players can streamline resource management and inventory organization during their Minecraft adventures.");
+                intent.putExtra("price", "Rp 40,000");
+                intent.putExtra("releaseDate", "09/12/2021");
+                intent.putExtra("imageGifName", "allay");
+                intent.putExtra("imagePngName", "allayheader");
+                startActivity(intent);
+            }
+        });
+
+        FrameLayout itemCard4 = findViewById(R.id.card_item_4);
+        itemCard4.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                // Create an Intent to start ItemDetailActivity
+                Intent intent = new Intent(HomeActivity.this, ItemDetail.class);
+                // Pass the item name to the ItemDetailActivity
+                intent.putExtra("title", "Diamond");
+                intent.putExtra("category", "Commodity");
+                intent.putExtra("longDesc", "Diamonds are prized gems in Minecraft, known for their rarity and superior crafting properties. Used primarily to create high-performance tools and armor, diamonds offer unparalleled durability and efficiency in mining and combat scenarios.");
+                intent.putExtra("price", "Rp 500,000");
+                intent.putExtra("releaseDate", "05/10/2022");
+                intent.putExtra("imageGifName", "diamond");
+                intent.putExtra("imagePngName", "diamondheader");
+                startActivity(intent);
+            }
+        });
+
         viewPager2 = findViewById(R.id.viewPager);
         textWelcome = findViewById(R.id.textWelcome);
         tabTerms = findViewById(R.id.tabTerms);
@@ -67,6 +140,8 @@ public class HomeActivity extends AppCompatActivity {
                 sliderHandler.postDelayed(this, 2000); // Interval 3000 ms
             }
         };
+
+
 
         // Set up tab click listeners
         tabTerms.setOnClickListener(new View.OnClickListener() {

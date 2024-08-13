@@ -17,4 +17,7 @@
     <color name="foreground">#F5FCFE</color>
     <color name="button">#384651</color>
     <color name="rippleColor">#0061AD</color>
+    <color name="buybButton1">#4F89DF</color>
+    <color name="buyButton2">#72000000</color>
+
 </resources>
