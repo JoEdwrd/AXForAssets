@@ -158,7 +158,7 @@ public class ItemsPageActivity extends AppCompatActivity {
 
         FrameLayout outsideNav = findViewById(R.id.backgroundFrame);
 
-        TextView itemNav = findViewById(R.id.homeNav);
+        TextView homeNav = findViewById(R.id.homeNav);
         TextView profileNav = findViewById(R.id.profileNav);
         TextView logoutNav = findViewById(R.id.logoutNav);
 
@@ -178,7 +178,7 @@ public class ItemsPageActivity extends AppCompatActivity {
             }
         });
 
-        itemNav.setOnClickListener(new View.OnClickListener() {
+        homeNav.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 Intent intent = new Intent(ItemsPageActivity.this, HomeActivity.class);

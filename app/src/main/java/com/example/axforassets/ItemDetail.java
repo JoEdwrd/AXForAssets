@@ -16,6 +16,8 @@ import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.constraintlayout.widget.ConstraintLayout;
 
+import org.w3c.dom.Text;
+
 public class ItemDetail extends AppCompatActivity {
 
     private EditText emailInput;
@@ -149,7 +151,7 @@ public class ItemDetail extends AppCompatActivity {
         }
 
         if (!email.contains("@gmail.com")) {
-            showCustomDialog("Email must be a valid Gmail address", R.drawable.ic_warning);
+            showCustomDialog("Email must contain '@gmail.com'", R.drawable.ic_warning);
             return;
         }
 
@@ -224,6 +226,8 @@ public class ItemDetail extends AppCompatActivity {
         TextView profileNav = findViewById(R.id.profileNav);
         TextView logoutNav = findViewById(R.id.logoutNav);
 
+        TextView textWelcome = findViewById(R.id.textWelcome);
+
         hamburgerMenu.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -250,7 +254,8 @@ public class ItemDetail extends AppCompatActivity {
             public void onClick(View view) {
                 nav.setVisibility(View.GONE);
                 outsideNav.setVisibility(View.GONE);
-                Intent intent = new Intent(ItemDetail.this, LoginPageActivity.class);
+                Intent intent = new Intent(ItemDetail.this, HomeActivity.class);
+                intent.putExtra("EXTRA_USERNAME", UserData.getInstance().getUsername());
                 startActivity(intent);
             }
         });
@@ -260,7 +265,7 @@ public class ItemDetail extends AppCompatActivity {
             public void onClick(View view) {
                 nav.setVisibility(View.GONE);
                 outsideNav.setVisibility(View.GONE);
-                Intent intent = new Intent(ItemDetail.this, LoginPageActivity.class);
+                Intent intent = new Intent(ItemDetail.this, Profile.class);
                 startActivity(intent);
             }
         });
