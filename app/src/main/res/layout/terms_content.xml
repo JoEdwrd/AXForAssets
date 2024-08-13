@@ -12,6 +12,7 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:justificationMode="inter_word"
             android:text="By using AXForAsset, you agree to create an account and log in before purchasing any game assets, including Minecraft assets. All assets are provided by third-party creators, and AXForAsset is not affiliated with Mojang Studios or Microsoft. Purchased assets are for personal use only, and reselling or commercial use is prohibited. All sales are final, and AXForAsset is not responsible for disputes or content violations. By continuing to use the platform, you accept these terms and conditions."
             android:textColor="@android:color/white"
             android:textSize="14sp" />
