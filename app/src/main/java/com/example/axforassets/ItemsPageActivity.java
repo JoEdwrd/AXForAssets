@@ -22,9 +22,12 @@ public class ItemsPageActivity extends AppCompatActivity {
     private RecyclerView recyclerView;
     private ItemsAdapter itemsAdapter;
     private List<Item> itemList;
+    String username;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
+        username = getIntent().getStringExtra("EXTRA_USERNAME");
+
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_items_page);
 
@@ -57,8 +60,6 @@ public class ItemsPageActivity extends AppCompatActivity {
                 startActivity(intent);
             }
         });
-
-
 
         recyclerView.setAdapter(itemsAdapter);
 
@@ -157,7 +158,7 @@ public class ItemsPageActivity extends AppCompatActivity {
 
         FrameLayout outsideNav = findViewById(R.id.backgroundFrame);
 
-        TextView homeNav = findViewById(R.id.homeNav);
+        TextView itemNav = findViewById(R.id.homeNav);
         TextView profileNav = findViewById(R.id.profileNav);
         TextView logoutNav = findViewById(R.id.logoutNav);
 
@@ -177,10 +178,11 @@ public class ItemsPageActivity extends AppCompatActivity {
             }
         });
 
-        homeNav.setOnClickListener(new View.OnClickListener() {
+        itemNav.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 Intent intent = new Intent(ItemsPageActivity.this, HomeActivity.class);
+                intent.putExtra("EXTRA_USERNAME", username);
                 startActivity(intent);
             }
         });
@@ -188,7 +190,8 @@ public class ItemsPageActivity extends AppCompatActivity {
         profileNav.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(ItemsPageActivity.this, LoginPageActivity.class);
+                Intent intent = new Intent(ItemsPageActivity.this, Profile.class);
+                intent.putExtra("EXTRA_USERNAME", username);
                 startActivity(intent);
             }
         });
@@ -197,10 +200,10 @@ public class ItemsPageActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 Intent intent = new Intent(ItemsPageActivity.this, LoginPageActivity.class);
+                intent.putExtra("EXTRA_USERNAME", username);
                 startActivity(intent);
             }
         });
     }
-
 
 }
