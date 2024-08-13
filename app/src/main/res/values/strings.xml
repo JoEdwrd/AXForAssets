@@ -6,4 +6,12 @@
         <item>Master Card</item>
         <item>Credit Card</item>
     </string-array>
+    <string name="profile">Profile</string>
+    <string name="profile_image">Profile Image</string>
+    <string name="greetings">Hi, %1$s</string>
+    <string name="job">Job        : %1$s</string>
+    <string name="email">Email     : %1$s</string>
+    <string name="phone">Phone    : %1$s</string>
+    <string name="address">Address    : %1$s</string>
+    <string name="hi_username">Hi, username</string>
 </resources>

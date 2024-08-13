@@ -3,6 +3,7 @@ package com.example.axforassets;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.LayoutInflater;
+import android.view.MotionEvent;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.Button;
@@ -71,7 +72,7 @@ public class ItemDetail extends AppCompatActivity {
         backButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                finish(); // Go back to the previous activity
+                finish();
             }
         });
 
@@ -109,6 +110,23 @@ public class ItemDetail extends AppCompatActivity {
                 // No action needed
             }
         });
+
+        buyButton.setOnTouchListener(new View.OnTouchListener() {
+            @Override
+            public boolean onTouch(View v, MotionEvent event) {
+                switch (event.getAction()) {
+                    case MotionEvent.ACTION_DOWN:
+                        buyButton.setBackgroundColor(getResources().getColor(R.color.buyButton2));
+                        break;
+                    case MotionEvent.ACTION_UP:
+                    case MotionEvent.ACTION_CANCEL:
+                        buyButton.setBackgroundColor(getResources().getColor(R.color.buybButton1));
+                        break;
+                }
+                return false;
+            }
+        });
+
 
         // Handle button click
         buyButton.setOnClickListener(new View.OnClickListener() {
@@ -262,5 +280,6 @@ public class ItemDetail extends AppCompatActivity {
             }
         });
     }
+
 
 }
