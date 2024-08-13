@@ -181,6 +181,7 @@ public class ItemsPageActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 Intent intent = new Intent(ItemsPageActivity.this, HomeActivity.class);
+                intent.putExtra("EXTRA_USERNAME", UserData.getInstance().getUsername());
                 startActivity(intent);
             }
         });

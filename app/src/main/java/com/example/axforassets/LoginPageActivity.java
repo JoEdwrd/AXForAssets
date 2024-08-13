@@ -50,24 +50,24 @@ public class LoginPageActivity extends AppCompatActivity {
 
         // Validate username
         if (!isUsernameValid) {
-            usernameInput.setError("Username cannot be empty!");
+//            usernameInput.setError("Username cannot be empty!");
             usernameInputError.setVisibility(View.VISIBLE);
         }
 
         // Validate password
         if (!isPasswordValid) {
             if (TextUtils.isEmpty(passwordVal)) {
-                passwordInput.setError("Password cannot be empty!");
+//                passwordInput.setError("Password cannot be empty!");
                 passwordInputEmptyError.setVisibility(View.VISIBLE);
             } else {
-                passwordInput.setError("Password must have minimum length of 8!");
+//                passwordInput.setError("Password must have minimum length of 8!");
                 passwordInputMinimumLengthError.setVisibility(View.VISIBLE);
             }
         }
 
         // If both inputs are valid
         if (isUsernameValid && isPasswordValid) {
-            Toast.makeText(LoginPageActivity.this, "Login Success", Toast.LENGTH_SHORT).show();
+//            Toast.makeText(LoginPageActivity.this, "Login Success", Toast.LENGTH_SHORT).show();
             UserData.getInstance().setUsername(usernameVal);
 
             // Create an Intent to start HomeActivity

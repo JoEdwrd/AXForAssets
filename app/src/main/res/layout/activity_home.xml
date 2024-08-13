@@ -593,7 +593,7 @@
                         android:textSize="20sp"
                         android:gravity="center_horizontal"
                         android:textColor="@color/textLabelColor"
-                        android:layout_marginTop="10dp"
+                        android:layout_marginTop="20dp"
                         android:clickable="true" />
 
                     <FrameLayout
