@@ -13,4 +13,8 @@
     <color name="textLabelColor">#AAAAAA</color>
     <color name="btnLoginColor">#4178E2</color>
     <color name="errorTextColor">#FF0000</color>
+    <color name="background">#091B29</color>
+    <color name="foreground">#F5FCFE</color>
+    <color name="button">#384651</color>
+    <color name="rippleColor">#0061AD</color>
 </resources>
