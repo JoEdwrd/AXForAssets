@@ -185,7 +185,7 @@
     <androidx.constraintlayout.widget.ConstraintLayout
         android:id="@+id/nav"
         android:layout_width="200dp"
-        android:layout_height="220dp"
+        android:layout_height="280dp"
         app:layout_constraintTop_toBottomOf="@+id/appBar"
         app:layout_constraintEnd_toEndOf="parent"
         android:layout_marginEnd="25dp"
@@ -200,7 +200,23 @@
             app:layout_constraintTop_toTopOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             android:padding="3dp">
+            <TextView
+                android:id="@+id/homeNav"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Home"
+                android:textStyle="bold"
+                android:textSize="20sp"
+                android:gravity="center_horizontal"
+                android:textColor="@color/textLabelColor"
+                android:layout_marginTop="10dp"
+                android:clickable="true" />
 
+            <FrameLayout
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:background="@color/white"
+                android:layout_marginTop="25dp" />
             <TextView
                 android:id="@+id/itemNav"
                 android:layout_width="match_parent"

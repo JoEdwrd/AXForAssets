@@ -50,7 +50,7 @@ public class Profile extends AppCompatActivity {
         username = getIntent().getStringExtra("EXTRA_USERNAME");
         textWelcome.setText("Welcome, " + username);
         textEmail = findViewById(R.id.tv_email);
-        textEmail.setText("email : " +username+"@gmail.com");
+        textEmail.setText("Email : " +username+"@gmail.com");
         LinearLayout logout = findViewById(R.id.logout);
         logout.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -69,6 +69,7 @@ public class Profile extends AppCompatActivity {
 
         FrameLayout outsideNav = findViewById(R.id.backgroundFrame);
 
+        TextView homeNav = findViewById(R.id.homeNav);
         TextView itemNav = findViewById(R.id.itemNav);
         TextView profileNav = findViewById(R.id.profileNav);
         TextView logoutNav = findViewById(R.id.logoutNav);
@@ -88,7 +89,14 @@ public class Profile extends AppCompatActivity {
                 outsideNav.setVisibility(View.GONE);
             }
         });
-
+        homeNav.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(Profile.this, HomeActivity.class);
+                intent.putExtra("EXTRA_USERNAME", username);
+                startActivity(intent);
+            }
+        });
         itemNav.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
