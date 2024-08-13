@@ -220,30 +220,13 @@
                 android:id="@+id/itemNav"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="Home"
+                android:text="Items"
                 android:textStyle="bold"
                 android:textSize="20sp"
                 android:gravity="center_horizontal"
                 android:textColor="@color/textLabelColor"
                 android:layout_marginTop="10dp"
                 android:clickable="true" />
-
-            <FrameLayout
-                android:layout_width="match_parent"
-                android:layout_height="1dp"
-                android:background="@color/white"
-                android:layout_marginTop="25dp" />
-
-            <TextView
-                android:id="@+id/itemsNav"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="Items"
-                android:textStyle="bold"
-                android:textSize="20sp"
-                android:gravity="center_horizontal"
-                android:layout_marginTop="25dp"
-                android:textColor="@color/textLabelColor" />
 
             <FrameLayout
                 android:layout_width="match_parent"
