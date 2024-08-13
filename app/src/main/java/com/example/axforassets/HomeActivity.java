@@ -23,6 +23,7 @@ public class HomeActivity extends AppCompatActivity {
     private Runnable sliderRunnable;
     private TextView tabTerms, tabCondition;
     private FrameLayout tabContent;
+    String username;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -36,6 +37,7 @@ public class HomeActivity extends AppCompatActivity {
             public void onClick(View v) {
                 // Create an Intent to start ItemDetailActivity
                 Intent intent = new Intent(HomeActivity.this, ItemDetail.class);
+                intent.putExtra("EXTRA_USERNAME", username);
                 // Pass the item name to the ItemDetailActivity
                 intent.putExtra("title", "Torch");
                 intent.putExtra("category", "Adventure");
@@ -109,7 +111,7 @@ public class HomeActivity extends AppCompatActivity {
         tabContent = findViewById(R.id.tabContent);
 
         // Assuming you want to display a dynamic username
-        String username = getIntent().getStringExtra("EXTRA_USERNAME");
+        username = getIntent().getStringExtra("EXTRA_USERNAME");
         textWelcome.setText("Welcome, " + username);
 
 //        List<SlideItem> sliderItem = new ArrayList<>();
@@ -236,7 +238,7 @@ public class HomeActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 Intent intent = new Intent(HomeActivity.this, ItemsPageActivity.class);
-//                intent.putExtra("EXTRA_USERNAME", username);
+                intent.putExtra("EXTRA_USERNAME", username);
                 startActivity(intent);
             }
         });
@@ -244,7 +246,8 @@ public class HomeActivity extends AppCompatActivity {
         profileNav.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(HomeActivity.this, HomeActivity.class);
+                Intent intent = new Intent(HomeActivity.this, Profile.class);
+                intent.putExtra("EXTRA_USERNAME", username);
                 startActivity(intent);
             }
         });
@@ -253,6 +256,7 @@ public class HomeActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 Intent intent = new Intent(HomeActivity.this, LoginPageActivity.class);
+                intent.putExtra("EXTRA_USERNAME", username);
                 startActivity(intent);
             }
         });
