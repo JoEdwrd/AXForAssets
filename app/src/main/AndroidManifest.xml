@@ -20,7 +20,7 @@
 <!--            android:theme="@style/Theme.Design.Light.NoActionBar" />-->
         <activity
             android:name=".ItemsPageActivity"
-            android:exported="true">
+            android:exported="false">
 <!--            <intent-filter>-->
 <!--                <action android:name="android.intent.action.MAIN" />-->
 <!--                <category android:name="android.intent.category.LAUNCHER" />-->

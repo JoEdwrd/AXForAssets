@@ -20,8 +20,8 @@ public class Profile extends AppCompatActivity {
     String name = "username";
     String job = "Programmer";
     String email = "username@gmail.com";
-    String phone = "0182618729171";
-    String address = "Jl. Kenangan No. 1, Jakarta Barat";
+    String phone = "0822788475834";
+    String address = "Jl. Cempaka A-17";
     String username;
     TextView textWelcome;
     TextView textEmail;
@@ -48,7 +48,7 @@ public class Profile extends AppCompatActivity {
 
         textWelcome = findViewById(R.id.tv_username);
         username = getIntent().getStringExtra("EXTRA_USERNAME");
-        textWelcome.setText("Welcome, " + username);
+        textWelcome.setText("Hi, " + username);
         textEmail = findViewById(R.id.tv_email);
         textEmail.setText("Email : " +username+"@gmail.com");
         LinearLayout logout = findViewById(R.id.logout);
